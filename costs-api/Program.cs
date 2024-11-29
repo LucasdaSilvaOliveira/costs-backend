@@ -1,4 +1,7 @@
+using AutoMapper;
+using costs_api.Configuration;
 using costs_api.Database.Context;
+using costs_api.Database.Entities;
 using costs_api.Database.Repository.ProjectRepositories;
 using costs_api.Database.Repository.ServiceRepositories;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +22,14 @@ builder.Services.AddDbContext<BancoContext>(opt =>
 
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
+
+var mapperConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new AutoMapperProfile());
+});
+
+IMapper mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 var app = builder.Build();
 
