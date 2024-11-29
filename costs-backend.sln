@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "costs-api", "costs-api\costs-api.csproj", "{49A489E9-E982-43B2-9972-B9215D0CBB16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49A489E9-E982-43B2-9972-B9215D0CBB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A489E9-E982-43B2-9972-B9215D0CBB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A489E9-E982-43B2-9972-B9215D0CBB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A489E9-E982-43B2-9972-B9215D0CBB16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F10C922-ECA5-4C0F-A4D6-AD92421D684D}
+	EndGlobalSection
+EndGlobal
