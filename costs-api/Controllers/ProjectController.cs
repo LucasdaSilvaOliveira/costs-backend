@@ -19,7 +19,7 @@ namespace costs_api.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("get-all")]
         public async Task<IActionResult> GetAll()
         {
             var projects = await _repository.GetAll();
@@ -29,8 +29,8 @@ namespace costs_api.Controllers
             return Ok(dtos);
         }
 
-        [HttpPost("Add")]
-        public async Task<IActionResult> Add(ProjectDTO dto)
+        [HttpPost("add")]
+        public async Task<IActionResult> Add([FromBody] ProjectDTO dto)
         {
             if (dto == null) return BadRequest();
 
@@ -40,8 +40,8 @@ namespace costs_api.Controllers
             return Created();
         }
 
-        [HttpPut("Update/{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody]ProjectDTO dto)
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] ProjectDTO dto)
         {
             var project = await _repository.GetById(id);
 
@@ -53,6 +53,15 @@ namespace costs_api.Controllers
 
             await _repository.Update(project);
 
+            return Ok();
+        }
+
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var project = await _repository.GetById(id);
+            if (project == null) return BadRequest();
+            await _repository.Delete(project);
             return Ok();
         }
     }
