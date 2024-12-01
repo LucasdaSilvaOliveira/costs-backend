@@ -29,6 +29,16 @@ namespace costs_api.Controllers
             return Ok(dtos);
         }
 
+        [HttpGet("get-by-id/{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var project = await _repository.GetById(id);
+            if (project == null) return NotFound();
+            var dto = _mapper.Map<ProjectDTO>(project);
+
+            return Ok(dto);
+        }
+
         [HttpPost("add")]
         public async Task<IActionResult> Add([FromBody] ProjectDTO dto)
         {
