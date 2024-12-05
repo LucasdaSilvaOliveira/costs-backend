@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using costs_api.Database.Entities;
 using costs_api.Database.Repository.ServiceRepositories;
-using costs_api.DTOs.Project;
 using costs_api.DTOs.Service;
 using Microsoft.AspNetCore.Mvc;
 

@@ -2,7 +2,6 @@
 using costs_api.Database.Entities;
 using costs_api.Database.Repository.ProjectRepositories;
 using costs_api.DTOs.Project;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace costs_api.Controllers
